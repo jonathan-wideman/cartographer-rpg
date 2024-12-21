@@ -19,7 +19,7 @@ export function MapToolbar({
   onToolChange, 
   onStampSelect 
 }: ToolbarProps) {
-  const { character, mapState, updateMapState } = useStore();
+  const { character, updateMapState } = useStore();
 
   const handleRollDice = () => {
     const canvas = document.querySelector('canvas');
@@ -58,6 +58,7 @@ export function MapToolbar({
       });
     }
 
+    // @ts-ignore TODO: issue #1 cleanup tsignores
     updateMapState({ dice: newDice });
   };
 
