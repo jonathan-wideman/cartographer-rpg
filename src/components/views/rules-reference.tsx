@@ -2,7 +2,7 @@ import { BookOpen } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 
 // Define the rules content structure
 const rulesContent = {

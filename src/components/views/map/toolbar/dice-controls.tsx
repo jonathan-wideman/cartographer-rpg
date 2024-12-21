@@ -1,7 +1,6 @@
 import { Dices } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useStore } from '@/lib/store';
-import { MapDie } from '@/lib/types/map';
 
 interface DiceControlsProps {
   onRoll: () => void;
@@ -12,10 +11,11 @@ export function DiceControls({ onRoll, onClearDice }: DiceControlsProps) {
   const { character, mapState } = useStore();
   const { dicePools } = character;
   
-  const diceByType = mapState.dice.reduce((acc, die) => {
-    acc[die.type] = (acc[die.type] || 0) + 1;
-    return acc;
-  }, {} as Record<string, number>);
+  // TODO: issue #1 this was unused, but may be useful
+  // const diceByType = mapState.dice.reduce((acc, die) => {
+  //   acc[die.type] = (acc[die.type] || 0) + 1;
+  //   return acc;
+  // }, {} as Record<string, number>);
 
   return (
     <div className="flex items-center gap-2 border-l pl-2">

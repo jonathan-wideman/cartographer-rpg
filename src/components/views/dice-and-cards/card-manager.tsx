@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { LayoutGrid, Shuffle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useStore } from '@/lib/store';
 
 type PlayingCard = {
   id: string;

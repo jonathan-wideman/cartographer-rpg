@@ -1,4 +1,4 @@
-import { Dice6, Plus, Minus } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { useStore } from '@/lib/store';
