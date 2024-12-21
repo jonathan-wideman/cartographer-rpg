@@ -83,6 +83,7 @@ export function ResultTables() {
                   {tables[selectedTable].results.map((result, index) => (
                     <tr key={index} className="border-b last:border-0">
                       <td className="py-2 font-mono">
+                        {/* @ts-ignore TODO: issue #1 cleanup tsignores */}
                         {tables[selectedTable].type === 'dice' ? result.roll : result.card}
                       </td>
                       <td className="py-2">{result.result}</td>
