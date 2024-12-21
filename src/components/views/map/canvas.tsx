@@ -11,7 +11,7 @@ import {
 import type { Point } from '@/lib/types/map';
 
 interface CanvasProps {
-  tool: 'draw' | 'erase' | 'stamp' | 'move';
+  tool: 'draw' | 'erase' | 'stamp' | 'move' | 'delete';
   selectedStamp: string | null;
   onLocationMove?: (point: Point) => void;
 }
@@ -87,16 +87,23 @@ export function MapCanvas({ tool, selectedStamp, onLocationMove }: CanvasProps) 
           position: point
         }]
       });
-    } else if (tool === 'move') {
+      return;
+    }
+    
+    if (tool === 'move') {
       updateMapState({ currentLocation: point });
       onLocationMove?.(point);
-    } else if (tool === 'delete') {
+      return;
+    }
+    
+    if (tool === 'delete') {
       const landmarkIndex = findLandmarkAtPoint(point, mapState.landmarks);
       if (landmarkIndex !== -1) {
         const newLandmarks = [...mapState.landmarks];
         newLandmarks.splice(landmarkIndex, 1);
         updateMapState({ landmarks: newLandmarks });
       }
+      return;
     }
   };
 
