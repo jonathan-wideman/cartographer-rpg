@@ -20,26 +20,38 @@ const defaultStats = {
   },
   coin: { 
     icon: <Coins className="h-4 w-4 text-foreground" />,
+    max: undefined,
+    min: undefined,
   },
   wares: { 
     icon: <Package className="h-4 w-4 text-foreground" />,
+    max: undefined,
+    min: undefined,
   },
   food: { 
     icon: <Utensils className="h-4 w-4 text-foreground" />,
+    max: undefined,
+    min: undefined,
   },
   items: { 
     icon: <Backpack className="h-4 w-4 text-foreground" />,
+    max: undefined,
+    min: undefined,
   },
   wounds: { 
     icon: <Bandage className="h-4 w-4 text-foreground" />,
+    max: undefined,
+    min: undefined,
   },
   threat: { 
     icon: <AlertTriangle className="h-4 w-4 text-foreground" />,
     max: 3,
+    min: undefined,
   },
   disaster: { 
     icon: <Skull className="h-4 w-4 text-foreground" />,
     max: 3, 
+    min: undefined,
   },
 };
 
@@ -113,10 +125,15 @@ export function StatTracker() {
     <div className="grid gap-6 sm:grid-cols-2">
       {Object.keys(defaultStats).map((stat) => <Stat
         key = {stat}
+        // @ts-ignore TODO: issue #1 cleanup tsignores
         label = {stat}
+        // @ts-ignore TODO: issue #1 cleanup tsignores
         value = {stats[stat].value}
+        // @ts-ignore
         notes = {stats[stat].notes}
+        // @ts-ignore TODO: issue #1 cleanup tsignores
         onValueChange = {handleStatChange(stat)}
+        // @ts-ignore TODO: issue #1 cleanup tsignores
         onNotesChange = {handleNotesChange(stat)}
       />)}
     </div>
